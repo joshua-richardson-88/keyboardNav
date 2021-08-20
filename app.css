@@ -1,0 +1,111 @@
+:root {
+  --header-font: #EEEEEE;
+  --form-label: #9E9E9E;
+  --form-valid: #4CAF50;
+  --form-focus: #53A39C;
+  --form-invalid: #F44336;
+  --btn-primary: #2196F3;
+  --bg-dp00: #121212;
+  --bg-dp01: rgba(255, 255, 255, 0.05);
+  --bg-dp02: rgba(255, 255, 255, 0.07);
+  --bg-dp03: rgba(255, 255, 255, 0.08);
+  --bg-dp04: rgba(255, 255, 255, 0.09);
+  --bg-dp06: rgba(255, 255, 255, 0.11);
+  --bg-dp08: rgba(255, 255, 255, 0.12);
+  --bg-dp12: rgba(255, 255, 255, 0.14);
+  --bg-dp16: rgba(255, 255, 255, 0.15);
+  --bg-dp24: rgba(255, 255, 255, 0.16);
+  --bg-secondary: #03508f;
+  --bg-tertiary: #767C78;
+  --font-primary: #EEEEEE;
+  --font-secondary: #121212;
+  --light-shadow: rgba(255, 255, 255, 0.6);
+  --dark-shadow: rgba(0, 0, 0, 1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-dp00);
+  color: var(--font-primary);
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 2em;
+  justify-content: space-around;
+  align-items: center;
+}
+
+body {
+  background-color: var(--bg-dp00);
+  color: var(--font-primary);
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 10vh 90vh;
+  grid-template-areas:
+    "header"
+    "main";
+}
+main   { grid-area: main; }
+header { grid-area: header; }
+
+main { background-color: var(--bg-dp01); }
+header { background-color: var(--bg-secondary); }
+
+header .row {
+  height: 6.3vh;
+  margin-bottom: 0;
+  justify-content: flex-start;
+}
+header .row h2 {
+  margin: auto 0 auto 2rem;
+}
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 2rem;
+}
+nav .menu-button {
+  cursor: pointer;
+  user-select: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+nav .menu-button:hover, nav .active {
+  background-color: var(--bg-dp12);
+}
+
+nav .active .menu-body { display: block; }
+
+nav .menu-body {
+  position: absolute;
+  left: 0;
+  top: 2.2rem;
+  display: none;
+  min-height: 20rem;
+  width: 10rem;
+  background-color: var(--bg-dp04);
+  border-radius: 0 0 5px 5px;
+  padding: 1rem;
+}
+nav .menu-body ul {
+  list-style: none;
+}
+nav .menu-body ul li { padding: 0.5rem 0; }
+nav .menu-button .hotkey {
+  text-decoration: underline;
+}
